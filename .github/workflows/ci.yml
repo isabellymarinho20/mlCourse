@@ -8,10 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: inference_service
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,4 +21,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: python -m pytest
